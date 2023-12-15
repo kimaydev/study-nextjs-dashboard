@@ -1,5 +1,7 @@
+import StyledComponentsRegistry from "./lib/registry";
 import Sidebar from "./sidebar";
 import Header from "./header";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -9,11 +11,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Sidebar />
-        <div>
-          <Header />
-          {children}
-        </div>
+        <StyledComponentsRegistry>
+          <Sidebar />
+          <div>
+            <Header />
+            {children}
+          </div>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
