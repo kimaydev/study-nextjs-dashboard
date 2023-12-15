@@ -1,3 +1,6 @@
+import Sidebar from "./sidebar";
+import Header from "./header";
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Sidebar />
+        <div>
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
